@@ -74,12 +74,15 @@
   tags:
     - installation-misc-apps
 
+- name: Check AUR packages
+  ansible.builtin.command: pacman -Qm
+  register: installed_aur_packages
+  changed_when: false
+
 - name: AUR packages
-  community.general.pacman:
-    name: "{{ item }}"
-    state: present
-    executable: yay
-    extra_args: -aS --noconfirm
+  become: false
+  ansible.builtin.command: "yay --noconfirm --noprogressbar --needed --sync {{ item }}"
+  when: item not in installed_aur_packages.stdout 
   with_items:
     - authy
     - brave-bin
