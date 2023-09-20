@@ -64,7 +64,6 @@
     - ffmpegthumbs # FFmpeg-based thumbnail creator for video files
     - firefox # Standalone web browser from mozilla.org
     - freerdp # Free implementation of the Remote Desktop Protocol (RDP)
-    - keepassxc # Cross-platform community-driven port of Keepass password manager
     - mariadb-clients # MariaDB client tools
     - postgresql-libs # Libraries for use with PostgreSQL
     - sqlite # A C library that implements an SQL database engine
