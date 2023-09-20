@@ -45,6 +45,7 @@
     - kcolorchooser # Color Chooser
     - kdeconnect # Adds communication between KDE and your smartphone
     - khotkeys # KHotKeys
+    - kio-gdrive # KIO Slave to access Google Drive
     - konsole # KDE terminal emulator
     - ktorrent # A powerful BitTorrent client for KDE
     - okteta # KDE hex editor for viewing and editing the raw data of files
