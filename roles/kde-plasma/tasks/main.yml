@@ -5,8 +5,8 @@
     state: present
     update_cache: true
   with_items:
-    - bluedevil # Integrate the Bluetooth technology within KDE workspace and applications
     - discover # KDE and Plasma resources management GUI
+    - bluedevil # Integrate the Bluetooth technology within KDE workspace and applications
     - drkonqi # The KDE crash handler
     - flatpak-kcm # Flatpak Permissions Management KCM
     - kde-gtk-config # GTK2 and GTK3 Configurator for KDE
@@ -73,6 +73,20 @@
     - vlc # Multi-platform MPEG, VCD/DVD, and DivX player
   tags:
     - installation-misc-apps
+
+- name: AUR packages
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+    executable: yay
+    extra_args: --builddir /home/psy/.cache/yay
+  with_items:
+    - authy
+    - brave-bin
+    - dymo-cups-drivers
+    - terraform-docs-bin
+    - vscodium-bin
+    - yay
 
 - name: Absent KDE plasma packages
   community.general.pacman:
