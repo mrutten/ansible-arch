@@ -1,0 +1,7 @@
+---
+- name: Arch Linux X11
+  hosts: workstations
+  become: true
+  gather_facts: false
+  roles:
+    - x11

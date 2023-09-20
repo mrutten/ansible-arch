@@ -1,0 +1,7 @@
+---
+- name: Arch Linux Docker
+  hosts: workstations
+  become: true
+  gather_facts: false
+  roles:
+    - docker

@@ -1,0 +1,10 @@
+---
+- name: Install SDDM
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+  with_items:
+    - sddm
+  tags:
+    - installation-sddm

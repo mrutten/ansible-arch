@@ -1,0 +1,7 @@
+---
+- name: Arch Linux KDM Plasma
+  hosts: workstations
+  become: true
+  gather_facts: false
+  roles:
+    - kde-plasma

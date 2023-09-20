@@ -1,0 +1,85 @@
+---
+- name: Install KDE plasma
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+  with_items:
+    - bluedevil # Integrate the Bluetooth technology within KDE workspace and applications
+    - discover # KDE and Plasma resources management GUI
+    - drkonqi # The KDE crash handler
+    - flatpak-kcm # Flatpak Permissions Management KCM
+    - kde-gtk-config # GTK2 and GTK3 Configurator for KDE
+    - kdeplasma-addons # All kind of addons to improve your Plasma experience
+    - kgamma5 # Adjust your monitor gamma settings
+    - kinfocenter # A utility that provides information about a computer system
+    - kscreen # KDE screen management software
+    - ksshaskpass # ssh-add helper that uses kwallet and kpassworddialog
+    - kwallet-pam # KWallet PAM integration
+    - kwrited # KDE daemon listening for wall and write messages
+    - plasma-browser-integration # Components necessary to integrate browsers into the Plasma Desktop
+    - plasma-desktop # KDE Plasma Desktop
+    - plasma-disks # Monitors S.M.A.R.T. capable devices for imminent failure
+    - plasma-firewall # Control Panel for your system firewall
+    - plasma-nm # Plasma applet written in QML for managing network connections
+    - plasma-pa # Plasma applet for audio volume management using PulseAudio
+    - plasma-systemmonitor # An interface for monitoring system sensors, process information and other system resources
+    - plasma-thunderbolt # Plasma integration for controlling Thunderbolt devices
+    - plasma-vault # Plasma applet and services for creating encrypted vaults
+    - powerdevil # Manages the power consumption settings of a Plasma Shell
+    - sddm-kcm # KDE Config Module for SDDM
+    - xdg-desktop-portal-kde # A backend implementation for xdg-desktop-portal using Qt/KF5
+  tags:
+    - installation-kde-plasma
+
+- name: Install KDE plasma apps
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+  with_items:
+    - dolphin # KDE File Manager
+    - gwenview # A fast and easy to use image viewer
+    - kate # Advanced text editor
+    - kcalc # Scientific Calculator
+    - kcolorchooser # Color Chooser
+    - kdeconnect # Adds communication between KDE and your smartphone
+    - khotkeys # KHotKeys
+    - konsole # KDE terminal emulator
+    - ktorrent # A powerful BitTorrent client for KDE
+    - okteta # KDE hex editor for viewing and editing the raw data of files
+    - okular # Document Viewer
+    - partitionmanager # A KDE utility that allows you to manage disks, partitions, and file systems
+    - spectacle # KDE screenshot capture utility
+  tags:
+    - installation-kde-plasma-apps
+
+- name: Install miscellaneous apps
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+  with_items:
+    - ffmpegthumbs # FFmpeg-based thumbnail creator for video files
+    - firefox # Standalone web browser from mozilla.org
+    - freerdp # Free implementation of the Remote Desktop Protocol (RDP)
+    - keepassxc # Cross-platform community-driven port of Keepass password manager
+    - mariadb-clients # MariaDB client tools
+    - postgresql-libs # Libraries for use with PostgreSQL
+    - sqlite # A C library that implements an SQL database engine
+    - telegram-desktop # Official Telegram Desktop client
+    - tor # Anonymizing overlay network
+    - torbrowser-launcher # Securely and easily download, verify, install, and launch Tor Browser in Linux
+    - vlc # Multi-platform MPEG, VCD/DVD, and DivX player
+  tags:
+    - installation-misc-apps
+
+- name: Absent KDE plasma packages
+  community.general.pacman:
+    name: "{{ item }}"
+    state: absent
+    update_cache: true
+  with_items:
+    - ksysguard # Track and control the processes running in your system
+  tags:
+    - absent-kde-plasma-packages

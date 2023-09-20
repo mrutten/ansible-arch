@@ -1,0 +1,7 @@
+---
+- name: Arch Linux fonts
+  hosts: workstations
+  become: true
+  gather_facts: false
+  roles:
+    - fonts

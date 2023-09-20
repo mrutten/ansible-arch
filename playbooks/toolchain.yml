@@ -1,0 +1,7 @@
+---
+- name: Arch Linux toolchain
+  hosts: workstations
+  become: true
+  gather_facts: false
+  roles:
+    - toolchain

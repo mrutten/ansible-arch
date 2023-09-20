@@ -1,0 +1,73 @@
+---
+- name: Install fonts
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+  with_items:
+    - noto-fonts # Google Noto TTF fonts
+    - noto-fonts-emoji # Google Noto emoji fonts
+    - otf-aurulent-nerd # Patched font Aurulent Sans Mono from nerd fonts library
+    - otf-codenewroman-nerd # Patched font Code New Roman from nerd fonts library
+    - otf-comicshanns-nerd # Patched font Comic Sans (Comic Shanns) from nerd fonts library
+    - otf-droid-nerd # Patched font Droid Sans Mono from nerd fonts library
+    - otf-firamono-nerd # Patched font Fira (Fura) Mono from nerd fonts library
+    - otf-hasklig-nerd # Patched font Hasklig (Hasklug) from nerd fonts library
+    - otf-hermit-nerd # Patched font Hermit from nerd fonts library
+    - otf-opendyslexic-nerd # Patched font OpenDyslexic from nerd fonts library
+    - otf-overpass-nerd # Patched font Overpass from nerd fonts library
+    - terminus-font # Monospace bitmap font (for X11 and console)
+    - ttf-3270-nerd # Patched font IBM 3270 from nerd fonts library
+    - ttf-agave-nerd # Patched font Agave from nerd fonts library
+    - ttf-anonymouspro-nerd # Patched font Anonymous Pro (Anonymice) from nerd fonts library
+    - ttf-arimo-nerd # Patched font Arimo from nerd fonts library
+    - ttf-bigblueterminal-nerd # Patched font Big Blue Terminal from nerd fonts library
+    - ttf-bitstream-vera-mono-nerd # Patched font Bitstream Vera Mono from nerd fonts library
+    - ttf-cascadia-code-nerd # ttf-cascadia-code-nerd
+    - ttf-cousine-nerd # Patched font Cousine from nerd fonts library
+    - ttf-daddytime-mono-nerd # Patched font Daddy Time Mono from nerd fonts library
+    - ttf-dejavu # Font family based on the Bitstream Vera Fonts with a wider range of characters
+    - ttf-dejavu-nerd # Patched font Dejavu Sans Mono from nerd fonts library
+    - ttf-droid # General-purpose fonts released by Google as part of Android
+    - ttf-fantasque-nerd # Patched font Fantasque Sans Mono from nerd fonts library
+    - ttf-firacode-nerd # Patched font Fira (Fura) Code from nerd fonts library
+    - ttf-font-awesome # Iconic font designed for Bootstrap
+    - ttf-freefont # A free family of scalable outline fonts
+    - ttf-go-nerd # Patched font Go Mono from nerd fonts library
+    - ttf-hack-nerd # Patched font Hack from nerd fonts library
+    - ttf-heavydata-nerd # Patched font Heavy Data from nerd fonts library
+    - ttf-iawriter-nerd # Patched font iA Writer (iM Writing) from nerd fonts library
+    - ttf-ibmplex-mono-nerd # Patched font IBM Plex Mono (Blex) from nerd fonts library
+    - ttf-inconsolata-go-nerd # ttf-inconsolata-go-nerd
+    - ttf-inconsolata-lgc-nerd # Patched font Inconsolata LGC from nerd fonts library
+    - ttf-inconsolata-nerd # Patched font Inconsolata from nerd fonts library
+    - ttf-iosevka-nerd # Patched font Iosevka from nerd fonts library
+    - ttf-iosevkaterm-nerd # Patched font Iosevka Term from nerd fonts library
+    - ttf-jetbrains-mono-nerd # Patched font JetBrains Mono from nerd fonts library
+    - ttf-lekton-nerd # Patched font Lekton from nerd fonts library
+    - ttf-liberation # Font family which aims at metric compatibility with Arial, Times New Roman, and Courier New
+    - ttf-liberation-mono-nerd # Patched font Liberation Mono from nerd fonts library
+    - ttf-lilex-nerd # Patched font Lilex from nerd fonts library
+    - ttf-meslo-nerd # Patched font Meslo LG from nerd fonts library
+    - ttf-monofur-nerd # Patched font Monofur from nerd fonts library
+    - ttf-monoid-nerd # Patched font Monoid from nerd fonts library
+    - ttf-mononoki-nerd # Patched font Mononoki from nerd fonts library
+    - ttf-mplus-nerd # Patched font MPlus from nerd fonts library
+    - ttf-nerd-fonts-symbols # High number of extra glyphs from popular 'iconic fonts'
+    - ttf-nerd-fonts-symbols-mono # High number of extra glyphs from popular 'iconic fonts' (monospace)
+    - ttf-noto-nerd # Patched font Noto from nerd fonts library
+    - ttf-profont-nerd # Patched font ProFont from nerd fonts library
+    - ttf-proggyclean-nerd # Patched font ProggyClean from nerd fonts library
+    - ttf-roboto # Google's signature family of fonts
+    - ttf-roboto-mono-nerd # Patched font Roboto Mono from nerd fonts library
+    - ttf-sharetech-mono-nerd # Patched font Share Tech Mono (Shure Tech Mono) from nerd fonts library
+    - ttf-sourcecodepro-nerd # Patched font Source Code Pro from nerd fonts library
+    - ttf-space-mono-nerd # Patched font Space Mono from nerd fonts library
+    - ttf-terminus-nerd # Patched font Terminus (Terminess) from nerd fonts library
+    - ttf-tinos-nerd # Patched font Tinos from nerd fonts library
+    - ttf-ubuntu-font-family # Ubuntu font family
+    - ttf-ubuntu-mono-nerd # Patched font Ubuntu Mono from nerd fonts library
+    - ttf-ubuntu-nerd # Patched font Ubuntu from nerd fonts library
+    - ttf-victor-mono-nerd # Patched font Victor Mono from nerd fonts library
+  tags:
+    - installation-fonts

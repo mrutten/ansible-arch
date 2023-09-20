@@ -1,0 +1,27 @@
+---
+- name: Rust packages
+  become: true
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+  with_items:
+    - rustup
+  tags:
+    - rust-installation
+
+- name: Rustup install toolchain
+  ansible.builtin.shell: rustup default stable
+  register: rust_toolchain
+  changed_when: false
+
+- ansible.builtin.debug:
+    msg: "{{ rust_toolchain.stdout }}"
+
+- name: Rustup install components
+  ansible.builtin.shell: rustup component add rust-src rust-analyzer
+  register: rust_components
+  changed_when: false
+
+- ansible.builtin.debug:
+    msg: "{{ rust_components.stdout }}"

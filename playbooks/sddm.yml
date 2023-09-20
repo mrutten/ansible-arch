@@ -1,0 +1,7 @@
+---
+- name: Arch Linux SDDM
+  hosts: workstations
+  become: true
+  gather_facts: false
+  roles:
+    - sddm

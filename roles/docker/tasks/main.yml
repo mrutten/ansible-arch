@@ -1,0 +1,14 @@
+---
+- name: Install Docker
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+  with_items:
+    - docker # Pack, ship and run any application as a lightweight container
+    - docker-buildx # Docker CLI plugin for extended build capabilities with BuildKit
+    - docker-compose # Fast, isolated development environments using Docker
+    - docker-machine # Machine management for a container-centric world
+    - kompose # Docker compose to Kubernetes transformation tool
+  tags:
+    - installation-docker

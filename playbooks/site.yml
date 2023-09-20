@@ -1,0 +1,9 @@
+---
+- import_playbook: toolchain.yml
+- import_playbook: sddm.yml
+- import_playbook: x11.yml
+- import_playbook: kde-plasma.yml
+- import_playbook: python.yml
+- import_playbook: rust.yml
+- import_playbook: docker.yml
+- import_playbook: fonts.yml

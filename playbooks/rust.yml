@@ -1,0 +1,6 @@
+---
+- name: Arch Linux Rust
+  hosts: workstations
+  gather_facts: false
+  roles:
+    - rust

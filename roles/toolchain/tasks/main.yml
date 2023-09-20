@@ -1,0 +1,88 @@
+---
+- name: Install phase1 toolchain
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+  with_items:
+    - ansible # Official assortment of Ansible collections
+    - ansible-core # Radically simple IT automation platform
+    - ansible-language-server # Ansible Language Server
+    - base-devel # Basic tools to build Arch Linux packages
+    - openssh # SSH protocol implementation for remote login, command execution and file transfer
+  tags:
+    - installation-toolchain-phase1
+
+- name: Install phase2 toolchain
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+  with_items:
+    - ansible-language-server # Ansible Language Server
+    - ark # Archiving Tool
+    - atop # A system and process level monitor
+    - bash-completion # Programmable completion for the bash shell
+    - bash-language-server # Bash language server implementation based on Tree Sitter and its grammar for Bash
+    - bind-tools # The ISC DNS tools
+    - btop # A monitor of system resources, bpytop ported to C++
+    - ctop # Top-like interface for container metrics
+    - ethtool # Utility for controlling network drivers and hardware
+    - firefox # Standalone web browser from mozilla.org
+    - gdb # The GNU Debugger
+    - git # the fast distributed version control system
+    - gnu-netcat # GNU rewrite of netcat, the network piping application
+    - gtop # System monitoring dashboard for terminal
+    - hdparm # A shell utility for manipulating Linux IDE drive/driver parameters
+    - htop # Interactive processes viewer
+    - iotop # View I/O usage of processes
+    - ipcalc # Calculates IP broadcast, network, Cisco wildcard mask, and host ranges
+    - iperf # A tool to measure maximum TCP bandwidth
+    - jq # Command-line JSON processor
+    - man-pages # Linux man pages
+    - mtr # Combines the functionality of traceroute and ping into one tool (CLI version)
+    - nasm # 80x86 assembler designed for portability and modularity
+    - ncdu # Disk usage analyzer with an ncurses interface
+    - neofetch # A CLI system information tool written in BASH that supports displaying images
+    - net-tools # Configuration tools for Linux networking
+    - nmap # Utility for network discovery and security auditing
+    - perl-rename # Renames multiple files using Perl regular expressions
+    - plocate # Alternative to locate, faster and compatible with mlocate's database
+    - rsync # A file transfer program to keep remote files in sync
+    - screen # Full-screen window manager that multiplexes a physical terminal
+    - smartmontools # Control and monitor S.M.A.R.T. enabled ATA and SCSI Hard Drives
+    - sshfs # FUSE client based on the SSH File Transfer Protocol
+    - strace # A diagnostic, debugging and instructional userspace tracer
+    - sysstat # a collection of performance monitoring tools (iostat,isag,mpstat,pidstat,sadf,sar)
+    - tcpdump # Powerful command-line packet analyzer
+    - tmux # Terminal multiplexer
+    - tree # A directory listing program displaying a depth indented list of files
+    - unzip # For extracting and viewing files in .zip archives
+    - usbutils # A collection of USB tools to query connected USB devices
+    - vifm # A file manager with curses interface, which provides Vim-like environment
+    - vim # Vi Improved, a highly configurable, improved version of the vi text editor
+    - wavemon # Ncurses-based monitoring application for wireless network devices
+    - whois # Intelligent WHOIS client
+    - wireshark-cli # Network traffic and protocol analyzer/sniffer - CLI tools and data files
+    - yaml-language-server # YAML Language Server
+    - zip # Compressor/archiver for creating and modifying zipfiles
+  tags:
+    - installation-toolchain-phase2
+
+- name: Symlink perl-rename to prename
+  ansible.builtin.file:
+    src: /usr/bin/perl-rename
+    dest: /usr/bin/prename
+    owner: root
+    group: root
+    state: link
+
+- name: Absent toolchain packages
+  community.general.pacman:
+    name: "{{ item }}"
+    state: absent
+    update_cache: true
+  with_items:
+    - nano
+  tags:
+    - absent-toolchain-packages
