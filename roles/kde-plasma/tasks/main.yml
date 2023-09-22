@@ -10,7 +10,6 @@
     - drkonqi # The KDE crash handler
     - flatpak-kcm # Flatpak Permissions Management KCM
     - kde-gtk-config # GTK2 and GTK3 Configurator for KDE
-    - kdeplasma-addons # All kind of addons to improve your Plasma experience
     - kgamma5 # Adjust your monitor gamma settings
     - kinfocenter # A utility that provides information about a computer system
     - kscreen # KDE screen management software
@@ -24,8 +23,6 @@
     - plasma-nm # Plasma applet written in QML for managing network connections
     - plasma-pa # Plasma applet for audio volume management using PulseAudio
     - plasma-systemmonitor # An interface for monitoring system sensors, process information and other system resources
-    - plasma-thunderbolt # Plasma integration for controlling Thunderbolt devices
-    - plasma-vault # Plasma applet and services for creating encrypted vaults
     - powerdevil # Manages the power consumption settings of a Plasma Shell
     - sddm-kcm # KDE Config Module for SDDM
     - xdg-desktop-portal-kde # A backend implementation for xdg-desktop-portal using Qt/KF5
@@ -44,7 +41,6 @@
     - kcalc # Scientific Calculator
     - kcolorchooser # Color Chooser
     - kdeconnect # Adds communication between KDE and your smartphone
-    - khotkeys # KHotKeys
     - kio-gdrive # KIO Slave to access Google Drive
     - konsole # KDE terminal emulator
     - ktorrent # A powerful BitTorrent client for KDE
@@ -98,6 +94,10 @@
     state: absent
     update_cache: true
   with_items:
+    - kdeplasma-addons # All kind of addons to improve your Plasma experience
+    - khotkeys # KHotKeys
     - ksysguard # Track and control the processes running in your system
+    - plasma-thunderbolt # Plasma integration for controlling Thunderbolt devices
+    - plasma-vault # Plasma applet and services for creating encrypted vaults
   tags:
     - absent-kde-plasma-packages
