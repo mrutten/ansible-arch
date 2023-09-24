@@ -6,7 +6,6 @@
     update_cache: true
   with_items:
     - bluedevil # Integrate the Bluetooth technology within KDE workspace and applications
-    - discover # KDE and Plasma resources management GUI
     - drkonqi # The KDE crash handler
     - flatpak-kcm # Flatpak Permissions Management KCM
     - kde-gtk-config # GTK2 and GTK3 Configurator for KDE
@@ -94,10 +93,6 @@
     state: absent
     update_cache: true
   with_items:
-    - kdeplasma-addons # All kind of addons to improve your Plasma experience
-    - khotkeys # KHotKeys
-    - ksysguard # Track and control the processes running in your system
-    - plasma-thunderbolt # Plasma integration for controlling Thunderbolt devices
-    - plasma-vault # Plasma applet and services for creating encrypted vaults
+    - discover # KDE and Plasma resources management GUI
   tags:
     - absent-kde-plasma-packages
