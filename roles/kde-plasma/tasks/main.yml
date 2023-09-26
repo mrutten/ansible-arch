@@ -40,6 +40,7 @@
     - kcalc # Scientific Calculator
     - kcolorchooser # Color Chooser
     - kdeconnect # Adds communication between KDE and your smartphone
+    - kdeplasma-addons # All kind of addons to improve your Plasma experience
     - kio-gdrive # KIO Slave to access Google Drive
     - konsole # KDE terminal emulator
     - ktorrent # A powerful BitTorrent client for KDE
