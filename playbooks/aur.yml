@@ -1,0 +1,7 @@
+---
+- name: Arch Linux AUR
+  hosts: workstations
+  become: true
+  gather_facts: false
+  roles:
+    - aur

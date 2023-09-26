@@ -26,7 +26,7 @@
     - sddm-kcm # KDE Config Module for SDDM
     - xdg-desktop-portal-kde # A backend implementation for xdg-desktop-portal using Qt/KF5
   tags:
-    - installation-kde-plasma
+    - installation-kde
 
 - name: Install KDE plasma apps
   community.general.pacman:
@@ -49,46 +49,9 @@
     - partitionmanager # A KDE utility that allows you to manage disks, partitions, and file systems
     - spectacle # KDE screenshot capture utility
   tags:
-    - installation-kde-plasma-apps
+    - installation-kde-apps
 
-- name: Install miscellaneous apps
-  community.general.pacman:
-    name: "{{ item }}"
-    state: present
-    update_cache: true
-  with_items:
-    - ffmpegthumbs # FFmpeg-based thumbnail creator for video files
-    - firefox # Standalone web browser from mozilla.org
-    - freerdp # Free implementation of the Remote Desktop Protocol (RDP)
-    - mariadb-clients # MariaDB client tools
-    - postgresql-libs # Libraries for use with PostgreSQL
-    - sqlite # A C library that implements an SQL database engine
-    - telegram-desktop # Official Telegram Desktop client
-    - tor # Anonymizing overlay network
-    - torbrowser-launcher # Securely and easily download, verify, install, and launch Tor Browser in Linux
-    - vlc # Multi-platform MPEG, VCD/DVD, and DivX player
-    - yt-dlp # A youtube-dl fork with additional features and fixes
-  tags:
-    - installation-misc-apps
-
-- name: Check AUR packages
-  ansible.builtin.command: pacman -Qm
-  register: installed_aur_packages
-  changed_when: false
-
-- name: AUR packages
-  become: false
-  ansible.builtin.command: "yay --noconfirm --noprogressbar --needed --sync {{ item }}"
-  when: item not in installed_aur_packages.stdout 
-  with_items:
-    - authy
-    - brave-bin
-    - dymo-cups-drivers
-    - terraform-docs-bin
-    - vscodium-bin
-    - yay
-
-- name: Absent KDE plasma packages
+- name: Remove KDE plasma packages
   community.general.pacman:
     name: "{{ item }}"
     state: absent
@@ -96,4 +59,4 @@
   with_items:
     - discover # KDE and Plasma resources management GUI
   tags:
-    - absent-kde-plasma-packages
+    - removal-kde

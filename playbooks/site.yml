@@ -7,3 +7,6 @@
 - import_playbook: rust.yml
 - import_playbook: docker.yml
 - import_playbook: fonts.yml
+- import_playbook: misc.yml
+- import_playbook: aur.yml
+

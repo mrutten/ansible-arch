@@ -1,0 +1,17 @@
+---
+- name: Check AUR packages
+  ansible.builtin.command: pacman -Qm
+  register: installed_aur_packages
+  changed_when: false
+
+- name: AUR packages
+  become: false
+  ansible.builtin.command: "yay --noconfirm --noprogressbar --needed --sync {{ item }}"
+  when: item not in installed_aur_packages.stdout 
+  with_items:
+    - authy
+    - brave-bin
+    - dymo-cups-drivers
+    - terraform-docs-bin
+    - vscodium-bin
+    - yay

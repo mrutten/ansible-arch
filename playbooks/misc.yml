@@ -1,0 +1,7 @@
+---
+- name: Arch Linux Miscellaneous
+  hosts: workstations
+  become: true
+  gather_facts: false
+  roles:
+    - misc
