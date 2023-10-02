@@ -6,6 +6,7 @@
     update_cache: true
   with_items:
     - bluedevil # Integrate the Bluetooth technology within KDE workspace and applications
+    - discover # KDE and Plasma resources management GUI
     - drkonqi # The KDE crash handler
     - flatpak-kcm # Flatpak Permissions Management KCM
     - kde-gtk-config # GTK2 and GTK3 Configurator for KDE
@@ -52,12 +53,12 @@
   tags:
     - installation-kde-apps
 
-- name: Remove KDE plasma packages
-  community.general.pacman:
-    name: "{{ item }}"
-    state: absent
-    update_cache: true
-  with_items:
-    - discover # KDE and Plasma resources management GUI
-  tags:
-    - removal-kde
+# - name: Remove KDE plasma packages
+#   community.general.pacman:
+#     name: "{{ item }}"
+#     state: absent
+#     update_cache: true
+#   with_items:
+#     - discover # KDE and Plasma resources management GUI
+#   tags:
+#     - removal-kde
