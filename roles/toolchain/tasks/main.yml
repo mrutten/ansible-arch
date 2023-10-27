@@ -26,6 +26,7 @@
     - bash-language-server # Bash language server implementation based on Tree Sitter and its grammar for Bash
     - bind-tools # The ISC DNS tools
     - btop # A monitor of system resources, bpytop ported to C++
+    - code # The Open Source build of Visual Studio Code (vscode) editor
     - ctop # Top-like interface for container metrics
     - ethtool # Utility for controlling network drivers and hardware
     - firefox # Standalone web browser from mozilla.org
