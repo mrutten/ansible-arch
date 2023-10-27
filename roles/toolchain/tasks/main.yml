@@ -70,6 +70,12 @@
   tags:
     - installation-toolchain-phase2
 
+- name: Enable GTK dialogs for Code OSS
+  ansible.builtin.replace:
+    path: /usr/share/applications/code-oss.desktop
+    regexp: 'Exec=/usr/bin/code-oss --unity-launch %F'
+    replace: 'Exec=env GTK_USE_PORTAL=1 /usr/bin/code-oss'
+
 - name: Symlink perl-rename to prename
   ansible.builtin.file:
     src: /usr/bin/perl-rename
