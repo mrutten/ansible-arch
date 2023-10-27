@@ -5,6 +5,7 @@
     state: present
     update_cache: true
   with_items:
+    - autopep8 # A tool that automatically formats Python code to conform to the PEP 8 style guide
     - bpython # Fancy ncurses interface to the Python interpreter
     - python # Next generation of the python high-level scripting language
     - python-django # A high-level Python Web framework that encourages rapid development and clean design
