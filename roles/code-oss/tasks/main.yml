@@ -18,7 +18,7 @@
     - configure-code
 
 - name: Install Code OSS extension
-  command: /usr/bin/code-oss --install-extension {{ item }}
+  ansible.builtin.shell: /usr/bin/code-oss --install-extension {{ item }}
   with_items:
     - arcticicestudio.nord-visual-studio-code
     - bierner.markdown-mermaid
