@@ -34,6 +34,6 @@
     - tamasfe.even-better-toml
     - tht13.python
     - yzhang.markdown-all-in-one
-  #changed_when: false
+  changed_when: false
   tags:
     - install-code-extensions
