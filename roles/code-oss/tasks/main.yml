@@ -18,6 +18,7 @@
     - configure-code
 
 - name: Install Code OSS extension
+  become: false
   ansible.builtin.shell: /usr/bin/code-oss --install-extension {{ item }}
   with_items:
     - arcticicestudio.nord-visual-studio-code
@@ -33,6 +34,6 @@
     - tamasfe.even-better-toml
     - tht13.python
     - yzhang.markdown-all-in-one
-  changed_when: false
+  #changed_when: false
   tags:
     - install-code-extensions
