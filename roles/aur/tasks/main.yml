@@ -15,3 +15,5 @@
     - suru-plus-aspromauros # Icons
     - terraform-docs-bin
     - yay
+  tags:
+    - install-aur

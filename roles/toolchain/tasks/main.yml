@@ -11,7 +11,7 @@
     - base-devel # Basic tools to build Arch Linux packages
     - openssh # SSH protocol implementation for remote login, command execution and file transfer
   tags:
-    - installation-toolchain-phase1
+    - install-toolchain-phase1
 
 - name: Install phase2 toolchain
   community.general.pacman:
@@ -19,14 +19,12 @@
     state: present
     update_cache: true
   with_items:
-    - ansible-language-server # Ansible Language Server
     - ark # Archiving Tool
     - atop # A system and process level monitor
     - bash-completion # Programmable completion for the bash shell
     - bash-language-server # Bash language server implementation based on Tree Sitter and its grammar for Bash
     - bind-tools # The ISC DNS tools
     - btop # A monitor of system resources, bpytop ported to C++
-    - code # The Open Source build of Visual Studio Code (vscode) editor
     - ctop # Top-like interface for container metrics
     - ethtool # Utility for controlling network drivers and hardware
     - firefox # Standalone web browser from mozilla.org
@@ -68,13 +66,7 @@
     - yaml-language-server # YAML Language Server
     - zip # Compressor/archiver for creating and modifying zipfiles
   tags:
-    - installation-toolchain-phase2
-
-- name: Enable GTK dialogs for Code OSS
-  ansible.builtin.replace:
-    path: /usr/share/applications/code-oss.desktop
-    regexp: 'Exec=/usr/bin/code-oss --unity-launch %F'
-    replace: 'Exec=env GTK_USE_PORTAL=1 /usr/bin/code-oss'
+    - install-toolchain-phase2
 
 - name: Symlink perl-rename to prename
   ansible.builtin.file:
@@ -84,7 +76,7 @@
     group: root
     state: link
 
-- name: Absent toolchain packages
+- name: Remove these packages if present
   community.general.pacman:
     name: "{{ item }}"
     state: absent
@@ -92,4 +84,4 @@
   with_items:
     - nano
   tags:
-    - absent-toolchain-packages
+    - uninstall-packages

@@ -5,6 +5,7 @@
 - import_playbook: kde-plasma.yml
 - import_playbook: python.yml
 - import_playbook: rust.yml
+- import_playbook: code-oss.yml
 - import_playbook: docker.yml
 - import_playbook: fonts.yml
 - import_playbook: misc.yml

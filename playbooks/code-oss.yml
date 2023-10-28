@@ -1,0 +1,7 @@
+---
+- name: Arch Linux Code OSS
+  hosts: workstations
+  become: true
+  gather_facts: false
+  roles:
+    - code-oss

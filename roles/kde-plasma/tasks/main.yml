@@ -27,7 +27,7 @@
     - sddm-kcm # KDE Config Module for SDDM
     - xdg-desktop-portal-kde # A backend implementation for xdg-desktop-portal using Qt/KF5
   tags:
-    - installation-kde
+    - install-kde
 
 - name: Install KDE plasma apps
   community.general.pacman:
@@ -51,7 +51,7 @@
     - partitionmanager # A KDE utility that allows you to manage disks, partitions, and file systems
     - spectacle # KDE screenshot capture utility
   tags:
-    - installation-kde-apps
+    - install-kde-apps
 
 # - name: Remove KDE plasma packages
 #   community.general.pacman:

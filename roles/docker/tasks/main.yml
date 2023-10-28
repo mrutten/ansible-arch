@@ -11,4 +11,4 @@
     - docker-machine # Machine management for a container-centric world
     - kompose # Docker compose to Kubernetes transformation tool
   tags:
-    - installation-docker
+    - install-docker

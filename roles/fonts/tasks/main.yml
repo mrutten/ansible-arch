@@ -70,4 +70,4 @@
     - ttf-ubuntu-nerd # Patched font Ubuntu from nerd fonts library
     - ttf-victor-mono-nerd # Patched font Victor Mono from nerd fonts library
   tags:
-    - installation-fonts
+    - install-fonts
