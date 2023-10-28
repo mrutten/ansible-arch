@@ -17,5 +17,5 @@
     - vlc # Multi-platform MPEG, VCD/DVD, and DivX player
     - yt-dlp # A youtube-dl fork with additional features and fixes
   tags:
-    - installation-misc
+    - install-misc
   

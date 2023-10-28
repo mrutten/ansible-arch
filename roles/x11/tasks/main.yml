@@ -11,4 +11,4 @@
     - xorg-xinit # X.Org initialisation program
     - xorg-server # Xorg X server
   tags:
-    - installation-x11
+    - install-x11

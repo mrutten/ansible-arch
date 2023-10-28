@@ -15,21 +15,21 @@
   register: rust_toolchain
   changed_when: false
   tags:
-  - configure-rust
+    - configure-rust
 
 - ansible.builtin.debug:
     msg: "{{ rust_toolchain.stdout }}"
   tags:
-  - configure-rust
+    - configure-rust
 
 - name: Rustup install components
   ansible.builtin.shell: rustup component add rust-src rust-analyzer
   register: rust_components
   changed_when: false
   tags:
-  - configure-rust
+    - configure-rust
 
 - ansible.builtin.debug:
     msg: "{{ rust_components.stdout }}"
   tags:
-  - configure-rust
+    - configure-rust
