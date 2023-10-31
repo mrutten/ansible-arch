@@ -39,7 +39,6 @@
     - gwenview # A fast and easy to use image viewer
     - kate # Advanced text editor
     - kcalc # Scientific Calculator
-    - kclock # Clock app for Plasma Mobile
     - kcolorchooser # Color Chooser
     - kdeconnect # Adds communication between KDE and your smartphone
     - kdeplasma-addons # All kind of addons to improve your Plasma experience
@@ -53,12 +52,12 @@
   tags:
     - install-kde-apps
 
-# - name: Remove KDE plasma packages
-#   community.general.pacman:
-#     name: "{{ item }}"
-#     state: absent
-#     update_cache: true
-#   with_items:
-#     - discover # KDE and Plasma resources management GUI
-#   tags:
-#     - removal-kde
+- name: Remove KDE plasma packages
+  community.general.pacman:
+    name: "{{ item }}"
+    state: absent
+    update_cache: true
+  with_items:
+    - kclock # Clock app for Plasma Mobile
+  tags:
+    - removal-kde
