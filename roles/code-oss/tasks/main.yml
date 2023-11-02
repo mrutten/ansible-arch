@@ -37,3 +37,12 @@
   changed_when: false
   tags:
     - install-code-extensions
+
+- name: Copy User Settings
+  ansible.builtin.template:
+    src: settings.json
+    dest: "{{ settings_path }}"
+    force: true
+    owner: "{{ user }}"
+    group: "{{ group }}"
+    mode: '0644'

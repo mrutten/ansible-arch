@@ -14,6 +14,7 @@
     - dymo-cups-drivers
     - suru-plus-aspromauros # Icons
     - terraform-docs-bin
+    - xmind
     - yay
   tags:
     - install-aur
