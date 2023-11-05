@@ -52,6 +52,15 @@
   tags:
     - install-kde-apps
 
+- name: Disable KDE Accessibility
+  ansible.builtin.template:
+      src: kaccess.desktop
+      dest: "{{ xdg_config_home }}/kaccess.desktop"
+      force: true
+      owner: "{{ user }}"
+      group: "{{ group }}"
+      mode: '0644'
+
 - name: Remove KDE plasma packages
   community.general.pacman:
     name: "{{ item }}"

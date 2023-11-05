@@ -1,0 +1,2 @@
+xdg_config_home: "/home/{{ user }}/.config/autostart"
+xdg_config_dirs: "/home/{{ user }}/.config/kdedefaults:/etc/xdg"
