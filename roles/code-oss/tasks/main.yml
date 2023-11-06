@@ -12,7 +12,7 @@
 - name: Enable GTK dialogs for Code OSS
   ansible.builtin.replace:
     path: /usr/share/applications/code-oss.desktop
-    regexp: "Exec=/usr/bin/code-oss --unity-launch %F"
+    regexp: "^Exec(.+)$"
     replace: "Exec=env GTK_USE_PORTAL=1 /usr/bin/code-oss"
   tags:
     - configure-code
